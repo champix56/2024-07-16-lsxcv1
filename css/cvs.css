@@ -52,3 +52,5 @@ diplomes{ margin-left:1cm;}
 experiences:before{	content: 'Experiences :';}
 experience{margin-left:1cm;}
 
+diplome>intitule{color:blue;}
+intitule{color:tomato;}
