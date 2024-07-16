@@ -5,10 +5,19 @@ diplomes, diplome{
 	display:block;
 	/*border:1px solid black;*/
 }
+@media print {
+	cv{
+		background-color:#ACACAC;
+	}
+}
+@media screen and (min-width : 800px){
+	cv{
+		border:1px solid black;
+	}
+}
 cv{
 	width:21cm;
 	page-break-after:always;
-	border:1px solid black;
 	padding-bottom: 2cm;
 }
 ident{
