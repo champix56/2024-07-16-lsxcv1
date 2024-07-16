@@ -1,4 +1,29 @@
-cv, ident, phraseAccroche, formations, formation, experiences, experience, diplomes, diplome{
+cv, ident, phraseAccroche, 
+formations, formation, 
+experiences, experience, 
+diplomes, diplome{
 	display:block;
 	border:1px solid black;
+}
+cv{
+	height:275mm;
+	width:21cm;
+	page-break-after:always;
+}
+ident{
+	margin-left:12cm;
+	width:8cm;
+	margin-top:1cm;
+	margin-bottom:2cm;
+}
+datenaiss, tel,mail{
+	display:block;
+}
+permis { display:none;}
+vehicule:before{
+	content:'Vehicule : ';
+}
+langue:before{
+	display:block;
+	content:attr(langName);
 }
