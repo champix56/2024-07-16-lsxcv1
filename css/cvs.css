@@ -6,9 +6,10 @@ diplomes, diplome{
 	/*border:1px solid black;*/
 }
 cv{
-	height:275mm;
 	width:21cm;
 	page-break-after:always;
+	border:1px solid black;
+	padding-bottom: 2cm;
 }
 ident{
 	margin-left:12cm;
@@ -38,11 +39,16 @@ phraseAccroche{
 	font-weight:900;
 }
 
-formations:before{
-display:block;
-content: 'Formations :';
-font-size:17pt;
+formations:before, experiences:before{
+	display:block;
+	font-size:17pt;
+	text-decoration: underline;
+	font-weight:900;
 }
+formations:before{	content: 'Formations :';}
 formations{ margin-bottom:1cm;}
 formation{margin-left:1cm;}
 diplomes{ margin-left:1cm;}
+experiences:before{	content: 'Experiences :';}
+experience{margin-left:1cm;}
+
