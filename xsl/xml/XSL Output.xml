@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE factures SYSTEM "facturationtransfert.dtd">
-<factures/>
+<factures>
+	<facture>
+		<prixAvgArticle>8.28333333333333</prixAvgArticle>
+		<ligneAvg>14.0833333333333</ligneAvg>
+		<nbLignes>3</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>9.95</prixAvgArticle>
+		<ligneAvg>74.625</ligneAvg>
+		<nbLignes>1</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>9.95</prixAvgArticle>
+		<ligneAvg>49.75</ligneAvg>
+		<nbLignes>2</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>9.95</prixAvgArticle>
+		<ligneAvg>69.65</ligneAvg>
+		<nbLignes>1</nbLignes>
+	</facture>
+	<facture>
+		<prixAvgArticle>7.61666666666667</prixAvgArticle>
+		<ligneAvg>32.975</ligneAvg>
+		<nbLignes>3</nbLignes>
+	</facture>
+</factures>
