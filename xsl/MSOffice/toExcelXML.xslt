@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
 		<xsl:processing-instruction name="mso-application">progid="Excel.Sheet"</xsl:processing-instruction>
@@ -145,7 +145,7 @@
 				</Style>
 			</Styles>
 			<Worksheet ss:Name="Feuil1">
-				<Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="8" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="61.8" ss:DefaultRowHeight="15">
+				<Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="{7+count(//facture)}" x:FullColumns="1" x:FullRows="1" ss:DefaultColumnWidth="61.8" ss:DefaultRowHeight="15">
 					<Column ss:AutoFitWidth="0" ss:Width="24.6"/>
 					<Column ss:AutoFitWidth="0" ss:Width="68.399999999999991"/>
 					<Column ss:AutoFitWidth="0" ss:Width="124.80000000000001"/>
@@ -214,26 +214,7 @@
 							<Data ss:Type="String">type</Data>
 						</Cell>
 					</Row>
-					<Row ss:AutoFitHeight="0" ss:Height="18.75">
-						<Cell ss:Index="2" ss:StyleID="s63">
-							<Data ss:Type="Number">0</Data>
-						</Cell>
-						<Cell ss:StyleID="s66">
-							<Data ss:Type="DateTime">2000-01-01T00:00:00.000</Data>
-						</Cell>
-						<Cell>
-							<Data ss:Type="Number">999999</Data>
-						</Cell>
-						<Cell>
-							<Data ss:Type="Number">789</Data>
-						</Cell>
-						<Cell ss:MergeAcross="1" ss:StyleID="s78">
-							<Data ss:Type="Number">25.58</Data>
-						</Cell>
-						<Cell ss:StyleID="s64">
-							<Data ss:Type="String">Facture</Data>
-						</Cell>
-					</Row>
+					<xsl:apply-templates select="//facture"/>
 					<Row ss:AutoFitHeight="0" ss:Height="18.75">
 						<Cell ss:Index="2" ss:StyleID="s63"/>
 						<Cell ss:StyleID="s66"/>
@@ -281,5 +262,27 @@
 				</WorksheetOptions>
 			</Worksheet>
 		</Workbook>
+	</xsl:template>
+	<xsl:template match="facture">
+		<Row ss:AutoFitHeight="0" ss:Height="18.75">
+			<Cell ss:Index="2" ss:StyleID="s63">
+				<Data ss:Type="Number">0</Data>
+			</Cell>
+			<Cell ss:StyleID="s66">
+				<Data ss:Type="DateTime">2000-01-01T00:00:00.000</Data>
+			</Cell>
+			<Cell>
+				<Data ss:Type="Number">999999</Data>
+			</Cell>
+			<Cell>
+				<Data ss:Type="Number">789</Data>
+			</Cell>
+			<Cell ss:MergeAcross="1" ss:StyleID="s78">
+				<Data ss:Type="Number">25.58</Data>
+			</Cell>
+			<Cell ss:StyleID="s64">
+				<Data ss:Type="String">Facture</Data>
+			</Cell>
+		</Row>
 	</xsl:template>
 </xsl:stylesheet>
