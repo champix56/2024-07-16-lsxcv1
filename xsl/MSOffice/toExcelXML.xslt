@@ -208,7 +208,7 @@
 							<Data ss:Type="String">nbLignes</Data>
 						</Cell>
 						<Cell ss:MergeAcross="1" ss:StyleID="s83">
-							<Data ss:Type="String">montant moyen de ligne</Data>
+							<Data ss:Type="String">Total lignes</Data>
 						</Cell>
 						<Cell ss:StyleID="s65">
 							<Data ss:Type="String">type</Data>
@@ -221,8 +221,12 @@
 						<Cell ss:MergeAcross="1" ss:StyleID="s77">
 							<Data ss:Type="String">Montant total fichier :</Data>
 						</Cell>
-						<Cell ss:MergeAcross="1" ss:StyleID="s78" ss:Formula="=SUM(R[-1]C:R[-1]C)">
-							<Data ss:Type="Number">25.58</Data>
+						<Cell ss:MergeAcross="1" ss:StyleID="s78" ss:Formula="=SUM(R[-{count(//facture)}]C:R[-1]C)">
+							<Data ss:Type="Number">
+								<xsl:call-template name="sommeArrondisStotligne">
+									<xsl:with-param name="totalLignes" select="//ligne"/>
+								</xsl:call-template>
+							</Data>
 						</Cell>
 						<Cell ss:StyleID="s64"/>
 					</Row>
@@ -264,25 +268,66 @@
 		</Workbook>
 	</xsl:template>
 	<xsl:template match="facture">
+		<xsl:param name="roudedLines">
+			<xsl:call-template name="limitLines">
+				<xsl:with-param name="lines" select=".//ligne"/>
+			</xsl:call-template>
+		</xsl:param>
+		<xsl:message>Voici le content de la balise <xsl:value-of select="$roudedLines"/></xsl:message>
 		<Row ss:AutoFitHeight="0" ss:Height="18.75">
 			<Cell ss:Index="2" ss:StyleID="s63">
-				<Data ss:Type="Number">0</Data>
+				<Data ss:Type="Number">
+					<xsl:value-of select="@numfacture"/>
+				</Data>
 			</Cell>
 			<Cell ss:StyleID="s66">
-				<Data ss:Type="DateTime">2000-01-01T00:00:00.000</Data>
+				<Data ss:Type="DateTime">
+					<xsl:value-of select="@datefacture"/>
+				</Data>
 			</Cell>
 			<Cell>
-				<Data ss:Type="Number">999999</Data>
+				<Data ss:Type="Number">
+					<xsl:value-of select="@idclient"/>
+				</Data>
 			</Cell>
 			<Cell>
-				<Data ss:Type="Number">789</Data>
+				<Data ss:Type="Number">
+					<xsl:value-of select="count(.//ligne)"/>
+				</Data>
 			</Cell>
 			<Cell ss:MergeAcross="1" ss:StyleID="s78">
-				<Data ss:Type="Number">25.58</Data>
+				<Data ss:Type="Number">
+					<xsl:value-of select="sum($roudedLines/*/*)"/>
+				</Data>
 			</Cell>
 			<Cell ss:StyleID="s64">
-				<Data ss:Type="String">Facture</Data>
+				<Data ss:Type="String">
+					<xsl:value-of select="@type"/>
+				</Data>
 			</Cell>
 		</Row>
+	</xsl:template>
+	<xsl:template name="limitLines">
+		<xsl:param name="lines" />
+		<lines>
+			<xsl:for-each select="$lines">
+				<line><xsl:value-of select="round(.//stotligne *100) div 100"/></line>
+			</xsl:for-each>
+		</lines>
+	</xsl:template>
+	<xsl:template name="sommeArrondisStotligne">
+		<xsl:param name="totalLignes"/>
+		<xsl:param name="total" select="0"/>
+		<xsl:choose>
+			<xsl:when test="$totalLignes[1]/following::ligne">
+				<xsl:call-template name="sommeArrondisStotligne">
+					<xsl:with-param name="totalLignes" select="$totalLignes[1]/following::ligne"/>
+					<xsl:with-param name="total" select="$total+round($totalLignes[1]//stotligne *100) div 100"/>
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$total+round($totalLignes[1]//stotligne *100) div 100"/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 </xsl:stylesheet>
