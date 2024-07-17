@@ -157,14 +157,18 @@
 							<Data ss:Type="String">Factures editées le : </Data>
 						</Cell>
 						<Cell ss:StyleID="s57">
-							<Data ss:Type="DateTime">2222-11-22T00:00:00.000</Data>
+							<Data ss:Type="DateTime">
+								<xsl:value-of select="/factures/@dateeditionXML"/>
+							</Data>
 						</Cell>
 						<Cell ss:StyleID="s58"/>
 						<Cell ss:MergeAcross="1" ss:StyleID="s80">
 							<Data ss:Type="String">Nombre de factures : </Data>
 						</Cell>
 						<Cell ss:StyleID="s59">
-							<Data ss:Type="Number">123</Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="count(//facture[contains(@type,'acture')])"/>
+							</Data>
 						</Cell>
 					</Row>
 					<Row ss:AutoFitHeight="0" ss:Height="15.75">
@@ -172,14 +176,18 @@
 							<Data ss:Type="String">Montant des factures :</Data>
 						</Cell>
 						<Cell ss:StyleID="s60">
-							<Data ss:Type="Number">999999</Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="sum(//stotligne)"/>
+							</Data>
 						</Cell>
 						<Cell ss:StyleID="s61"/>
 						<Cell ss:MergeAcross="1" ss:StyleID="s82">
 							<Data ss:Type="String">Nombre de devis : </Data>
 						</Cell>
 						<Cell ss:StyleID="s62">
-							<Data ss:Type="Number">345</Data>
+							<Data ss:Type="Number">
+								<xsl:value-of select="count(//facture[contains(@type,'evis')])"/>
+							</Data>
 						</Cell>
 					</Row>
 					<Row ss:AutoFitHeight="0" ss:Height="15.75">
