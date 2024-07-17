@@ -3,11 +3,16 @@
 	<xsl:output method="text"/>
 	<xsl:template match="/">
 		<xsl:text>type;numfacture;date;nbLigne;total</xsl:text>
-		<xsl:for-each select="//facture">
-			<xsl:sort select="@numfacture"/>
-			<xsl:text>
+		<!--ici application de la methode depresentation pour tous les noeuds facture-->
+		<xsl:apply-templates select="//facture"/>
+	</xsl:template>
+	<xsl:template match="facture">
+		<xsl:text>
 </xsl:text>
-			<xsl:value-of select="@type"/>;<xsl:value-of select="@numfacture"/>;<xsl:value-of select="@datefacture"/>;<xsl:value-of select="count(.//ligne)"/>;<xsl:value-of select="sum(.//stotligne)"/>
-		</xsl:for-each>
+		<xsl:value-of select="@type"/>;<xsl:value-of select="@numfacture"/>;<xsl:value-of select="@datefacture"/>;<xsl:value-of select="count(.//ligne)"/>;<xsl:value-of select="sum(.//stotligne)"/>
+	</xsl:template>
+	<xsl:template match="facture[contains(@type,'evis')]">
+		<xsl:text>
+DEVIS</xsl:text>
 	</xsl:template>
 </xsl:stylesheet>
