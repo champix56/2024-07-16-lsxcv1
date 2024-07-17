@@ -305,17 +305,19 @@
 	</xsl:template>
 	<xsl:template name="recursRoundLignes">
 		<xsl:param name="total" select="0"/>
-	<xsl:param name="positionItter" select="1"/>
+		<xsl:param name="positionItter" select="1"/>
 		<xsl:param name="lignesNodes"/>
 		<xsl:choose>
 			<xsl:when test="$lignesNodes[$positionItter+1]">
 				<xsl:call-template name="recursRoundLignes">
-				<xsl:with-param name="total" select="$total + round($lignesNodes[$positionItter]/stotligne *100) div 100"/>
-				<xsl:with-param name="lignesNodes" select="$lignesNodes"/>
-				<xsl:with-param name="positionItter" select="$positionItter+1"/>
+					<xsl:with-param name="total" select="$total + round($lignesNodes[$positionItter]/stotligne *100) div 100"/>
+					<xsl:with-param name="lignesNodes" select="$lignesNodes"/>
+					<xsl:with-param name="positionItter" select="$positionItter+1"/>
 				</xsl:call-template>
 			</xsl:when>
-			<xsl:otherwise><xsl:value-of select="$total+ round($lignesNodes[$positionItter]/stotligne *100) div 100"/></xsl:otherwise>
+			<xsl:otherwise>
+				<xsl:value-of select="$total+ round($lignesNodes[$positionItter]/stotligne *100) div 100"/>
+			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 </xsl:stylesheet>
