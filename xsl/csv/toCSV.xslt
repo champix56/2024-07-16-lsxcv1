@@ -4,7 +4,9 @@
 	<xsl:template match="/">
 		<xsl:text>type;numfacture;date;nbLigne;total</xsl:text>
 		<!--ici application de la methode depresentation pour tous les noeuds facture-->
-		<xsl:apply-templates select="//facture"/>
+		<xsl:apply-templates select="//facture">
+			<xsl:sort select="@numfacture"/> 
+		</xsl:apply-templates>
 	</xsl:template>
 	<xsl:template match="facture">
 		<xsl:text>
@@ -13,6 +15,6 @@
 	</xsl:template>
 	<xsl:template match="facture[contains(@type,'evis')]">
 		<xsl:text>
-DEVIS</xsl:text>
+DEVIS;NA;NA;NA;NA</xsl:text>
 	</xsl:template>
 </xsl:stylesheet>
