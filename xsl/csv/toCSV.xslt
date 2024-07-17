@@ -3,7 +3,8 @@
 	<xsl:output method="text"/>
 	<xsl:template match="/">
 		<xsl:text>type;numfacture;date;nbLigne;total</xsl:text>
-		<xsl:for-each select="//facture">
-Facture</xsl:for-each>
+		<xsl:for-each select="//facture"><xsl:text>
+</xsl:text><xsl:value-of select="@type"/>;<xsl:value-of select="@numfacture"/>;<xsl:value-of select="@datefacture"/>;<xsl:value-of select="sum(.//stotligne)"/>
+		</xsl:for-each>
 	</xsl:template>
 </xsl:stylesheet>
