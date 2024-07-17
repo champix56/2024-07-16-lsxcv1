@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT facture (prixAvgArticle, ligneAvg, nbLignes)>
+<!ATTLIST facture
+	idfacture CDATA #REQUIRED
+	nomClient CDATA #REQUIRED
+>
+<!ELEMENT factures (facture+)>
+<!ELEMENT ligneAvg (#PCDATA)>
+<!ELEMENT nbLignes (#PCDATA)>
+<!ELEMENT prixAvgArticle (#PCDATA)>
