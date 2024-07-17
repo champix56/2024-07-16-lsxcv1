@@ -2,7 +2,8 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 	<xsl:template match="/">
-		<?mso-application progid="Excel.Sheet"?>
+		<xsl:processing-instruction name="mso-application">progid="Excel.Sheet"</xsl:processing-instruction>
+		<!--<?mso-application progid="Excel.Sheet"?>-->
 		<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
 			<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
 				<Author>champix</Author>
