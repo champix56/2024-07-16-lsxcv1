@@ -103,9 +103,11 @@
 			</thead>
 			<tbody>
 				<xsl:apply-templates select=".//ligne"/>
-				<xsl:variable name="tht"><xsl:call-template name="recursRoundLignes">
+				<xsl:variable name="tht">
+					<xsl:call-template name="recursRoundLignes">
 						<xsl:with-param name="lignesNodes" select=".//ligne"/>
-					</xsl:call-template></xsl:variable>
+					</xsl:call-template>
+				</xsl:variable>
 				<tr>
 					<th colspan="3"/>
 					<th class="c_total">Total H.T. : </th>
@@ -139,10 +141,10 @@
 				<xsl:value-of select="nbUnit"/>
 			</td>
 			<td class="c_total">
-			<xsl:variable name="value">
-				<xsl:call-template name="recursRoundLignes">
-					<xsl:with-param name="lignesNodes" select="."/>
-				</xsl:call-template>
+				<xsl:variable name="value">
+					<xsl:call-template name="recursRoundLignes">
+						<xsl:with-param name="lignesNodes" select="."/>
+					</xsl:call-template>
 				</xsl:variable>
 				<xsl:value-of select="format-number($value,'# ##0,00&euro;','FR_fr')"/>
 			</td>
