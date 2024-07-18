@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:decimal-format name="FR_fr" decimal-separator="," grouping-separator=" "/>
 	<xsl:template name="recursRoundLignes">
 		<xsl:param name="total" select="0"/>
 		<xsl:param name="positionItter" select="1"/>
