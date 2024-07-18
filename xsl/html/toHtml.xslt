@@ -10,7 +10,12 @@
 			<head>
 				<title/>
 				<style type="text/css">
-					div{border:1px solid black;}
+					/*div{border:1px solid black;}*/
+					@media screen{
+						.facture{
+							border:1px solid black;
+						}
+					}
 					.facture{
 						page-break-before:always;
 						page-break-inside:auto;
@@ -46,7 +51,7 @@
 					.c_pht, .c_total{text-align:right;}
 					.c_quant{text-align:center;}
 					.c_total{font-weight:900;}
-					.footer{ text-align:center;}
+					.footer{width:100%; text-align:center;}
 				</style>
 			</head>
 			<body>
@@ -61,7 +66,9 @@
 		</html>
 	</xsl:template>
 	<xsl:template match="facture" mode="sommaire">
-		<li><a href="#f-{@numfacture}">facture <xsl:value-of select="@numfacture"/></a></li>
+		<li>
+			<a href="#f-{@numfacture}">facture <xsl:value-of select="@numfacture"/></a>
+		</li>
 	</xsl:template>
 	<xsl:template match="facture">
 		<div class="facture" id="f-{@numfacture}">
@@ -79,7 +86,8 @@
 		<div class="destinataire">dest</div>
 	</xsl:template>
 	<xsl:template match="@numfacture">
-		<div class="numfacture">Facture N° XX en dte du : xx-xx-2024</div>
+		<div class="numfacture"> 
+			Facture N° XX .....</div>
 	</xsl:template>
 	<xsl:template match="lignes">
 		<table cellpadding="0" cellspacing="0">
@@ -114,11 +122,21 @@
 	</xsl:template>
 	<xsl:template match="ligne">
 		<tr>
-			<td class="c_ref">ref</td>
-			<td class="c_design">designation</td>
-			<td class="c_pht">&euro;/Unit.</td>
-			<td class="c_quant">Quant.</td>
-			<td class="c_total">Total</td>
+			<td class="c_ref">
+				<xsl:value-of select="ref"/>
+			</td>
+			<td class="c_design">
+				<xsl:value-of select="designation"/>
+			</td>
+			<td class="c_pht">
+				<xsl:value-of select="phtByUnit"/>
+			</td>
+			<td class="c_quant">
+				<xsl:value-of select="nbUnit"/>
+			</td>
+			<td class="c_total">
+				<xsl:value-of select="stotligne"/>
+			</td>
 		</tr>
 	</xsl:template>
 	<!--<xsl:template match="facture[contains(@type,'evis')]//ligne">
