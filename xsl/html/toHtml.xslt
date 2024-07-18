@@ -111,17 +111,24 @@
 				<tr>
 					<th colspan="3"/>
 					<th class="c_total">Total H.T. : </th>
-					<th class="c_total"><xsl:value-of select="format-number($tht,'# ##0,00&euro;','FR_fr')"/></th>
+					<th class="c_total">
+						<xsl:value-of select="format-number($tht,'# ##0,00&euro;','FR_fr')"/>
+					</th>
 				</tr>
+				<xsl:variable name="mtva" select="round($tht * 0.196 * 100) div 100"/>
 				<tr>
 					<th colspan="3"/>
 					<th class="c_total">T.V.A. 19.6% : </th>
-					<th class="c_total">XX.XX&euro;</th>
+					<th class="c_total">
+						<xsl:value-of select="format-number($mtva,'# ##0,00&euro;','FR_fr')"/>
+					</th>
 				</tr>
 				<tr>
 					<th colspan="3"/>
 					<th class="c_total">Total T.T.C. : </th>
-					<th class="c_total">XX.XX&euro;</th>
+					<th class="c_total">
+						<xsl:value-of select="format-number($mtva + $tht,'# ##0,00&euro;','FR_fr')"/>
+					</th>
 				</tr>
 			</tbody>
 		</table>
