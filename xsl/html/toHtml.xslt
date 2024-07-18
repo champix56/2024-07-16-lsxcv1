@@ -9,6 +9,46 @@
 		<html>
 			<head>
 				<title/>
+				<style type="text/css">
+					div{border:1px solid black;}
+					.facture{
+						page-break-before:always;
+						page-break-inside:auto;
+						width:287mm;
+						height:200mm;
+					}
+					.emeteur, .destinataire{height : 50mm; margin-bottom:1cm;}
+					.emeteur{
+						margin-top:10mm;
+						margin-left:10mm;
+					}
+					.destinataire{
+						margin-left:14cm;
+						margin-right:2cm;
+					}
+					.numfacture{
+						margin-left:4cm;
+						margin-right:4cm;
+						font-weight:700;
+						text-align:center;
+						border:1px solid black;
+						margin-bottom:1cm;
+					}
+					table{
+						width:100%;
+						margin-left:1cm;
+						margin-right:1cm;
+						margin-bottom:2cm;
+					}
+					table thead{background-color:#ACACAC;}
+					table td, table th{border: 1px solid black;}
+					.c_ref{ font-weight:700;}
+					.c_design{}
+					.c_pht, .c_total{text-align:right;}
+					.c_quant{text-align:center;}
+					.c_total{font-weight:900;}
+					.footer{ text-align:center;}
+				</style>
 			</head>
 			<body>
 				<h1>     Liste des factures  </h1>
@@ -22,7 +62,7 @@
 			<div class="emeteur">emet</div>
 			<div class="destinataire">dest</div>
 			<div class="numfacture">Facture N° XX en dte du : xx-xx-2024</div>
-			<table>
+			<table  cellpadding="0" cellspacing="0">
 				<thead>
 					<tr>
 						<th>ref</th>
