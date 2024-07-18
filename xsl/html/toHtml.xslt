@@ -81,7 +81,14 @@
 		</div>
 	</xsl:template>
 	<xsl:template match="@rsets">
-		<div class="emeteur">emet</div>
+		<div class="emeteur">
+			<xsl:value-of select="."/><br/>
+			<xsl:value-of select="/factures/@adr1ets"/><br/>
+			<xsl:if test="string-length(/factures/@adr2ets) &gt;= 1">
+				<xsl:value-of select="/factures/@adr2ets"/><br/>
+			</xsl:if>
+			<xsl:value-of select="/factures/@cpets"/>&nbsp;<xsl:value-of select="/factures/@villeets"/><br/>
+		</div>
 	</xsl:template>
 	<xsl:template match="@idclient">
 		<div class="destinataire">dest</div>
