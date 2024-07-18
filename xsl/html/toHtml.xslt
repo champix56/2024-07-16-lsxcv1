@@ -88,7 +88,8 @@
 	</xsl:template>
 	<xsl:template match="@numfacture">
 		<div class="numfacture"> 
-			Facture N° XX .....</div>
+			<xsl:value-of select="translate(../@type,'fd','FD')"/> N° <xsl:value-of select="."/><br/>
+			en date du : <xsl:value-of select="../@datefacture"/></div>
 	</xsl:template>
 	<xsl:template match="lignes">
 		<table cellpadding="0" cellspacing="0">
