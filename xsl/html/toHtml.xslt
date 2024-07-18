@@ -58,12 +58,18 @@
 	</xsl:template>
 	<xsl:template match="facture">
 		<div class="facture">
-			<div class="emeteur">emet</div>
-			<div class="destinataire">dest</div>
-			<xsl:apply-templates select="@numfacture" />
+			<xsl:apply-templates select="/factures/@rsets"/>
+			<xsl:apply-templates select="@idclient"/>
+			<xsl:apply-templates select="@numfacture"/>
 			<xsl:apply-templates select=".//lignes"/>
 			<xsl:call-template name="footer"/>
 		</div>
+	</xsl:template>
+	<xsl:template match="@rsets">
+		<div class="emeteur">emet</div>
+	</xsl:template>
+	<xsl:template match="@idclient">
+		<div class="destinataire">dest</div>
 	</xsl:template>
 	<xsl:template match="@numfacture">
 		<div class="numfacture">Facture N° XX en dte du : xx-xx-2024</div>
