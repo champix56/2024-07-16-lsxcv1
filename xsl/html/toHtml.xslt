@@ -6,6 +6,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" encoding="UTF-8" indent="yes"/>
 	<xsl:include href="libs.xslt"/>
+	<!--<xsl:variable name="docClient" select="document('../clients.xml')/clients"/>-->
 	<xsl:template match="/">
 		<html>
 			<head>
@@ -85,13 +86,27 @@
 			<xsl:value-of select="."/><br/>
 			<xsl:value-of select="/factures/@adr1ets"/><br/>
 			<xsl:if test="string-length(/factures/@adr2ets) &gt;= 1">
-				<xsl:value-of select="/factures/@adr2ets"/><br/>
+				<xsl:value-of select="/factures/@adr2ets"/>
+				<br/>
 			</xsl:if>
 			<xsl:value-of select="/factures/@cpets"/>&nbsp;<xsl:value-of select="/factures/@villeets"/><br/>
 		</div>
 	</xsl:template>
+	<xsl:template match="clients/client">
+		<xsl:value-of select="destinataire"/><br/>
+		<xsl:value-of select="adr1"/><br/>
+			<xsl:if test="string-length(adr2) &gt;= 1">
+			<xsl:value-of select="adr2"/>
+			<br/>
+		</xsl:if>
+			<xsl:value-of select="cp"/>&nbsp;<xsl:value-of select="ville"/>
+	</xsl:template>
 	<xsl:template match="@idclient">
-		<div class="destinataire">dest</div>
+		<xsl:variable name="idc" select="."/>
+		<xsl:variable name="client" select="document('../clients.xml')/clients/client[@id=$idc]"/>
+		<div class="destinataire">
+			<xsl:apply-templates select="$client"/>
+		</div>
 	</xsl:template>
 	<xsl:template match="@numfacture">
 		<div class="numfacture"> 
