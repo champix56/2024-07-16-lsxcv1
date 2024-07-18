@@ -40,7 +40,23 @@
 						<td class="c_quant">Quant.</td>
 						<td class="c_total">Total</td>
 					</tr>
+					<tr>
+						<th colspan="3"></th>
+						<th >Total HT</th>
+						<th >XX.XX&euro;</th>
+					</tr>
+					<tr>
+						<th colspan="3"></th>
+						<th >T.V.A. 19.6%</th>
+						<th >XX.XX&euro;</th>
+					</tr>
+					<tr>
+						<th colspan="3"></th>
+						<th >Total TTC</th>
+						<th >XX.XX&euro;</th>
+					</tr>
 				</tbody>
+				
 			</table>
 			<div class="footer">Entreprise XXXXXX</div>
 		</div>
