@@ -52,12 +52,19 @@
 			<body>
 				<h1>     Liste des factures  </h1>
 				<hr/>
+				<ol>
+					<xsl:apply-templates select="//facture" mode="sommaire"/>
+				</ol>
+				<hr/>
 				<xsl:apply-templates select="//facture"/>
 			</body>
 		</html>
 	</xsl:template>
+	<xsl:template match="facture" mode="sommaire">
+		<li><a href="#f-{@numfacture}">facture <xsl:value-of select="@numfacture"/></a></li>
+	</xsl:template>
 	<xsl:template match="facture">
-		<div class="facture">
+		<div class="facture" id="f-{@numfacture}">
 			<xsl:apply-templates select="/factures/@rsets"/>
 			<xsl:apply-templates select="@idclient"/>
 			<xsl:apply-templates select="@numfacture"/>
