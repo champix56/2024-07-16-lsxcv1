@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
 	<xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
+	<xsl:decimal-format name="numeric" decimal-separator="." /> 
 	<xsl:template match="/">
 		<xsl:processing-instruction name="mso-application">progid="Excel.Sheet"</xsl:processing-instruction>
 		<!--<?mso-application progid="Excel.Sheet"?>-->
@@ -310,13 +311,13 @@
 		<xsl:choose>
 			<xsl:when test="$lignesNodes[$positionItter+1]">
 				<xsl:call-template name="recursRoundLignes">
-					<xsl:with-param name="total" select="$total + round($lignesNodes[$positionItter]/stotligne *100) div 100"/>
+					<xsl:with-param name="total" select="format-number($total + round($lignesNodes[$positionItter]/stotligne *100) div 100,'0.00')"/>
 					<xsl:with-param name="lignesNodes" select="$lignesNodes"/>
 					<xsl:with-param name="positionItter" select="$positionItter+1"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="$total+ round($lignesNodes[$positionItter]/stotligne *100) div 100"/>
+				<xsl:value-of select="format-number($total+ round($lignesNodes[$positionItter]/stotligne *100) div 100,'0.00','numeric')"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
