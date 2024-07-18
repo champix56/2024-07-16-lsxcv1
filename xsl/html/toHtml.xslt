@@ -60,43 +60,64 @@
 		<div class="facture">
 			<div class="emeteur">emet</div>
 			<div class="destinataire">dest</div>
-			<div class="numfacture">Facture N° XX en dte du : xx-xx-2024</div>
-			<table cellpadding="0" cellspacing="0">
-				<thead>
-					<tr>
-						<th>ref</th>
-						<th>designation</th>
-						<th>&euro;/Unit.</th>
-						<th>Quant.</th>
-						<th>Total</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="c_ref">ref</td>
-						<td class="c_design">designation</td>
-						<td class="c_pht">&euro;/Unit.</td>
-						<td class="c_quant">Quant.</td>
-						<td class="c_total">Total</td>
-					</tr>
-					<tr>
-						<th colspan="3"/>
-						<th class="c_total">Total H.T. : </th>
-						<th class="c_total">XX.XX&euro;</th>
-					</tr>
-					<tr>
-						<th colspan="3"/>
-						<th class="c_total">T.V.A. 19.6% : </th>
-						<th class="c_total">XX.XX&euro;</th>
-					</tr>
-					<tr>
-						<th colspan="3"/>
-						<th class="c_total">Total T.T.C. : </th>
-						<th class="c_total">XX.XX&euro;</th>
-					</tr>
-				</tbody>
-			</table>
-			<div class="footer">Entreprise XXXXXX</div>
+			<xsl:apply-templates select="@numfacture" />
+			<xsl:apply-templates select=".//lignes"/>
+			<xsl:call-template name="footer"/>
 		</div>
+	</xsl:template>
+	<xsl:template match="@numfacture">
+		<div class="numfacture">Facture N° XX en dte du : xx-xx-2024</div>
+	</xsl:template>
+	<xsl:template match="lignes">
+		<table cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+					<th>ref</th>
+					<th>designation</th>
+					<th>&euro;/Unit.</th>
+					<th>Quant.</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<xsl:apply-templates select=".//ligne"/>
+				<tr>
+					<th colspan="3"/>
+					<th class="c_total">Total H.T. : </th>
+					<th class="c_total">XX.XX&euro;</th>
+				</tr>
+				<tr>
+					<th colspan="3"/>
+					<th class="c_total">T.V.A. 19.6% : </th>
+					<th class="c_total">XX.XX&euro;</th>
+				</tr>
+				<tr>
+					<th colspan="3"/>
+					<th class="c_total">Total T.T.C. : </th>
+					<th class="c_total">XX.XX&euro;</th>
+				</tr>
+			</tbody>
+		</table>
+	</xsl:template>
+	<xsl:template match="ligne">
+		<tr>
+			<td class="c_ref">ref</td>
+			<td class="c_design">designation</td>
+			<td class="c_pht">&euro;/Unit.</td>
+			<td class="c_quant">Quant.</td>
+			<td class="c_total">Total</td>
+		</tr>
+	</xsl:template>
+	<!--<xsl:template match="facture[contains(@type,'evis')]//ligne">
+		<tr>
+			<td class="c_ref">ref</td>
+			<td class="c_design">designation</td>
+			<td class="c_pht"></td>
+			<td class="c_quant"></td>
+			<td class="c_total">Total</td>
+		</tr>
+	</xsl:template>	-->
+	<xsl:template name="footer">
+		<div class="footer">Entreprise XXXXXX</div>
 	</xsl:template>
 </xsl:stylesheet>
