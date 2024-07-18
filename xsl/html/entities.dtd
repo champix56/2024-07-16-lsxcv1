@@ -1,0 +1,5 @@
+<!ENTITY % devises SYSTEM "entities-devises.dtd">
+<!ENTITY % format SYSTEM "entities-format.dtd">
+
+%devises;
+%format;
