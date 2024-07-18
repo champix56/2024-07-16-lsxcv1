@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<fo:layout-master-set>
+<fo:simple-page-master page-height="297mm" page-width="210mm" master-name="A4_PORTRAIT">
+<fo:region-body margin-bottom="7mm" background-repeat="no-repeat" background-image="C:\Users\champix\AppData\Roaming\fond1524806923.png"/>
+<fo:region-before extent="50mm"/>
+<fo:region-after extent="7mm"/>
+</fo:simple-page-master>
+<fo:simple-page-master page-height="297mm" page-width="210mm" master-name="A4_PORTRAITINTER">
+<fo:region-body background-repeat="no-repeat" background-image="C:\Users\champix\AppData\Roaming\fond1524806923.png"/>
+</fo:simple-page-master>
+</fo:layout-master-set>
+<fo:page-sequence master-reference="A4_PORTRAITINTER">
+<fo:flow flow-name="xsl-region-body">
+<fo:block margin-top="75mm" text-align="center">
+<fo:external-graphic content-width="120mm" content-height="120mm" src="G:\partage\photos\H97C9583_1R_DxOFP.JPG" scaling="uniform"/>
+<fo:block text-align="center" font-size="60pt" color="RED">Album photo</fo:block>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10589498_10152666826402884_269854391_n.jpg" scaling="uniform"/>
+<fo:block>10589498_10152666826402884_269854391_n.jpg</fo:block>
+<fo:block>versailles</fo:block>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10599489_10152664721102884_8998763423280924639_n.jpg" scaling="uniform"/>
+<fo:block>10599489_10152664721102884_8998763423280924639_n.jpg</fo:block>
+<fo:block>versailles 2</fo:block>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10603059_10152666856762884_1968346443_n.jpg" scaling="uniform"/>
+<fo:block>10603059_10152666856762884_1968346443_n.jpg</fo:block>
+<fo:block>versailles 3</fo:block>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10616075_10152664721277884_204613508926358332_n.jpg"/>
+<fo:block>10616075_10152664721277884_204613508926358332_n.jpg</fo:block>
+<fo:block>Locqmariaquer</fo:block>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10637762_10152666826227884_1150744547_n.jpg" scaling="uniform"/>
+<fo:block>10637762_10152666826227884_1150744547_n.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10643440_10152666821127884_1257003855_n-688x457.jpg" scaling="uniform"/>
+<fo:block>10643440_10152666821127884_1257003855_n-688x457.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10659229_10152664721312884_1912826066174067960_n.jpg" scaling="uniform"/>
+<fo:block>10659229_10152664721312884_1912826066174067960_n.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\10659229_10152664721312884_19128260661740679pp60_n.jpg"/>
+<fo:block>10659229_10152664721312884_19128260661740679pp60_n.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\11313_10152664722977884_68115858871786570_n.jpg" scaling="uniform"/>
+<fo:block>11313_10152664722977884_68115858871786570_n.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\934819_10152664725362884_952774551003375319_n-688x458.jpg" scaling="uniform"/>
+<fo:block>934819_10152664725362884_952774551003375319_n-688x458.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C0023-rS.JPG" scaling="uniform"/>
+<fo:block>H97C0023-rS.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C0055.JPG"/>
+<fo:block>H97C0055.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C6399-Copier.jpg" scaling="uniform"/>
+<fo:block>H97C6399-Copier.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C6499-Copier.jpg" scaling="uniform"/>
+<fo:block>H97C6499-Copier.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9306FINAL-EPREUVE-EPRUVE-L.jpg" scaling="uniform"/>
+<fo:block>H97C9306FINAL-EPREUVE-EPRUVE-L.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9583_1R_DxOFP.JPG"/>
+<fo:block>H97C9583_1R_DxOFP.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9909_DxOFP.JPG" scaling="uniform"/>
+<fo:block>H97C9909_DxOFP.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9909_DxOFP2.jpg" scaling="uniform"/>
+<fo:block>H97C9909_DxOFP2.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9919_DxOFPSigned.JPG" scaling="uniform"/>
+<fo:block>H97C9919_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9922R_DxOFPSigned.JPG"/>
+<fo:block>H97C9922R_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9931_DxOFP1.jpg" scaling="uniform"/>
+<fo:block>H97C9931_DxOFP1.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9938R_DxOFPSigned.JPG" scaling="uniform"/>
+<fo:block>H97C9938R_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9958RT_DxOFPSigned.JPG" scaling="uniform"/>
+<fo:block>H97C9958RT_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9958R_DxOFPSigned.JPG"/>
+<fo:block>H97C9958R_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9968R_DxOFPSigned.JPG" scaling="uniform"/>
+<fo:block>H97C9968R_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9974-r2.JPG" scaling="uniform"/>
+<fo:block>H97C9974-r2.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9974_DxOFPSigned.JPG" scaling="uniform"/>
+<fo:block>H97C9974_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\H97C9991R_DxOFPSigned.JPG"/>
+<fo:block>H97C9991R_DxOFPSigned.JPG</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\MG_0157_8_9_tonemappedEPRUVE-EPRUVEL.jpg" scaling="uniform"/>
+<fo:block>MG_0157_8_9_tonemappedEPRUVE-EPRUVEL.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\MG_0750EPREUVE-EPRUVEL.jpg" scaling="uniform"/>
+<fo:block>MG_0750EPREUVE-EPRUVEL.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\MG_1932_DxOEPREUVE-EPRUVEL.jpg" scaling="uniform"/>
+<fo:block>MG_1932_DxOEPREUVE-EPRUVEL.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\MG_1936_DxOepreuve-EPRUVEL.jpg"/>
+<fo:block>MG_1936_DxOepreuve-EPRUVEL.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\quiberonCoteSauvage-688x458.jpg" scaling="uniform"/>
+<fo:block>quiberonCoteSauvage-688x458.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\SH97C9989.jpg" scaling="uniform"/>
+<fo:block>SH97C9989.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\s_H97C0775.jpg" scaling="uniform"/>
+<fo:block>s_H97C0775.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\s_H97C1010.jpg"/>
+<fo:block>s_H97C1010.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\S_H97C7350b.jpg" scaling="uniform"/>
+<fo:block>S_H97C7350b.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\S_H97C9008.jpg" scaling="uniform"/>
+<fo:block>S_H97C9008.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\S_H97C9131.jpg" scaling="uniform"/>
+<fo:block>S_H97C9131.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\S_H97C9173.jpg"/>
+<fo:block>S_H97C9173.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+<fo:page-sequence master-reference="A4_PORTRAIT">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block margin-bottom="20mm" text-align="center" color="BLUE">
+<fo:basic-link external-destination="mailto:desorbaix@free.fr">desorbaix@free.fr - page <fo:page-number/>
+</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block text-align="center" font-size="80pt" color="RED">Album photo</fo:block>
+<fo:block margin-top="10mm" margin-left="4mm">
+<fo:table width="20cm">
+<fo:table-body>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="G:\partage\photos\S_H97C9193.jpg" scaling="uniform"/>
+<fo:block>S_H97C9193.jpg</fo:block>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="" scaling="uniform"/>
+<fo:block/>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row height="110mm">
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src="" scaling="uniform"/>
+<fo:block/>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell width="100mm">
+<fo:block text-align="center">
+<fo:external-graphic content-width="97mm" content-height="97mm" src=""/>
+<fo:block/>
+<fo:block/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:block>
+</fo:flow>
+</fo:page-sequence>
+</fo:root>
