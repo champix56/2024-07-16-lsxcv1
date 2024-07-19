@@ -31,10 +31,28 @@
 				<xsl:attribute name="break-after">page</xsl:attribute>
 			</xsl:if>
 			<xsl:apply-templates select="//titre"/>
+			<fo:table>
+				<fo:table-body>
+					<fo:table-row>
+						<!--ligne 1-->
+						<xsl:apply-templates select=".//image[position() &lt;= 2 ]"/>
+					</fo:table-row>
+					<xsl:if test="count(image) > 2">
+					<fo:table-row>
+						<!--ligne 2-->
+						<xsl:apply-templates select=".//image[position() >2 ]"/>
+					</fo:table-row>
+					</xsl:if>
+				</fo:table-body>
+			</fo:table>
 			<xsl:apply-templates select="//signature"/>
 		</fo:block>
 	</xsl:template>
-	<xsl:template match="image"/>
+	<xsl:template match="image">
+		<fo:table-cell>
+			<fo:block text-align="center">une image</fo:block>
+		</fo:table-cell>
+	</xsl:template>
 	<xsl:template match="signature">
 		<fo:basic-link external-destination="mailto:{//signature}">
 			<fo:inline color="blue" text-decoration="underline">
