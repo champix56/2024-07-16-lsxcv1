@@ -5,13 +5,7 @@
 	<xsl:include href="sommaire.xsl"/>
 	<xsl:template match="/">
 		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-			<fo:page-sequence master-reference="A4Portrait">
-				<fo:flow flow-name="xsl-region-body">
-					<fo:block>
-						<xsl:call-template name="sommaire"/>
-					</fo:block>
-				</fo:flow>
-			</fo:page-sequence>
+			
 			<fo:layout-master-set>
 				<xsl:call-template name="papersFormats"/>
 				<fo:simple-page-master master-name="10x15" page-width="10cm" page-height="15cm" >
@@ -19,6 +13,13 @@
 				</fo:simple-page-master>
 			</fo:layout-master-set>
 			<!--partie de def des corps des pages-->
+			<fo:page-sequence master-reference="A4Portrait">
+				<fo:flow flow-name="xsl-region-body">
+					<fo:block>
+						<xsl:call-template name="sommaire"/>
+					</fo:block>
+				</fo:flow>
+			</fo:page-sequence>
 			<fo:page-sequence master-reference="A4PortraitAfter_LR">
 				<fo:static-content flow-name="xsl-region-after">
 					<fo:block>
