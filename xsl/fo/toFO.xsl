@@ -52,6 +52,9 @@
 		<fo:table-cell>
 			<fo:block text-align="center">
 				<fo:external-graphic src="{concat(@path,@href)}" scaling="uniform" content-height="100mm" content-width="98mm"/>
+				<fo:block>
+					<xsl:apply-templates select="*|text()"/>
+				</fo:block>
 				<xsl:if test="/photos/@OnlyComment='false'">
 					<fo:block font-size="6.5pt" font-style="italic">
 						<xsl:value-of select="@href"/>
@@ -59,6 +62,9 @@
 				</xsl:if>
 			</fo:block>
 		</fo:table-cell>
+	</xsl:template>
+	<xsl:template match="image/fo:*">
+		<xsl:copy-of select="."/>
 	</xsl:template>
 	<xsl:template match="signature">
 		<fo:basic-link external-destination="mailto:{//signature}">
