@@ -13,6 +13,9 @@
 			<fo:page-sequence master-reference="A4Portrait">
 				<fo:flow flow-name="xsl-region-body">
 					<fo:block>
+						<fo:block break-after="page">
+							<xsl:call-template name="list"/>
+						</fo:block>
 						<xsl:apply-templates select="//page"/>
 					</fo:block>
 				</fo:flow>
@@ -77,5 +80,20 @@
 				<xsl:value-of select="//signature"/>
 			</fo:inline>
 		</fo:basic-link>
+	</xsl:template>
+	<!--demo de list avec liens-->
+	<xsl:template name="list">
+		<fo:list-block>
+			<fo:list-item>
+				<fo:list-item-label end-indent="label-end()">
+					<fo:block>+</fo:block>
+				</fo:list-item-label>
+				<fo:list-item-body start-indent="body-start()">
+					<fo:block>acceder a la <fo:basic-link internal-destination="p1">
+							<fo:inline color="blue">page 1</fo:inline>
+						</fo:basic-link></fo:block>
+				</fo:list-item-body>
+			</fo:list-item>
+		</fo:list-block>
 	</xsl:template>
 </xsl:stylesheet>
