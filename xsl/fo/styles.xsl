@@ -14,6 +14,9 @@
 	<xsl:attribute-set name="big">
 		<xsl:attribute name="font-size">20pt</xsl:attribute>
 	</xsl:attribute-set>
+	<xsl:attribute-set name="small">
+		<xsl:attribute name="font-size">7pt</xsl:attribute>
+	</xsl:attribute-set>
 	<xsl:attribute-set name="border1px">
 		<xsl:attribute name="border">0.5mm solid black</xsl:attribute>
 	</xsl:attribute-set>
