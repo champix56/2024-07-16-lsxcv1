@@ -13,9 +13,7 @@
 			<fo:page-sequence master-reference="A4Portrait">
 				<fo:flow flow-name="xsl-region-body">
 					<fo:block>
-						<fo:block break-after="page">
-							<xsl:call-template name="list"/>
-						</fo:block>
+						<xsl:call-template name="sommaire"/>
 						<xsl:apply-templates select="//page"/>
 					</fo:block>
 				</fo:flow>
@@ -57,7 +55,7 @@
 		</fo:block>
 	</xsl:template>
 	<xsl:template match="image">
-		<fo:table-cell>
+		<fo:table-cell id="i{generate-id()}">
 			<fo:block text-align="center">
 				<fo:external-graphic src="{concat(@path,@href)}" scaling="uniform" content-height="100mm" content-width="98mm"/>
 				<fo:block>
@@ -95,5 +93,21 @@
 				</fo:list-item-body>
 			</fo:list-item>
 		</fo:list-block>
+	</xsl:template>
+	<xsl:template name="sommaire">
+		<fo:block break-after="page">
+			<xsl:apply-templates select="//titre"/>
+			<fo:block>SOMMAIRE</fo:block>
+			<xsl:apply-templates select="//page" mode="toc"/>
+		</fo:block>
+	</xsl:template>
+	<xsl:template match="page" mode="toc">
+		<fo:block>
+			Page <xsl:value-of select="position()"/>
+			<xsl:apply-templates select=".//image" mode="toc"/>
+		</fo:block>
+	</xsl:template>
+	<xsl:template match="image" mode="toc">
+			<fo:block><xsl:value-of select="@href"/></fo:block>
 	</xsl:template>
 </xsl:stylesheet>
