@@ -26,7 +26,7 @@
 		</fo:block>
 	</xsl:template>
 	<xsl:template match="page">
-		<fo:block>
+		<fo:block id="p{position()}">
 			<xsl:if test="position() != last()">
 				<xsl:attribute name="break-after">page</xsl:attribute>
 			</xsl:if>
@@ -45,7 +45,12 @@
 					</xsl:if>
 				</fo:table-body>
 			</fo:table>
-			<xsl:apply-templates select="//signature"/>
+			<xsl:call-template name="footer"/>
+		</fo:block>
+	</xsl:template>
+	<xsl:template name="footer">
+		<fo:block text-align="center">
+			<xsl:apply-templates select="//signature"/> - <fo:page-number/> / <fo:page-number-citation ref-id="p{last()}"/>
 		</fo:block>
 	</xsl:template>
 	<xsl:template match="image">
