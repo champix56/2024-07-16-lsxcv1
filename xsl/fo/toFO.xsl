@@ -38,10 +38,10 @@
 						<xsl:apply-templates select=".//image[position() &lt;= 2 ]"/>
 					</fo:table-row>
 					<xsl:if test="count(image) > 2">
-					<fo:table-row>
-						<!--ligne 2-->
-						<xsl:apply-templates select=".//image[position() >2 ]"/>
-					</fo:table-row>
+						<fo:table-row>
+							<!--ligne 2-->
+							<xsl:apply-templates select=".//image[position() >2 ]"/>
+						</fo:table-row>
 					</xsl:if>
 				</fo:table-body>
 			</fo:table>
@@ -50,7 +50,14 @@
 	</xsl:template>
 	<xsl:template match="image">
 		<fo:table-cell>
-			<fo:block text-align="center">une image</fo:block>
+			<fo:block text-align="center">
+				<fo:external-graphic src="{concat(@path,@href)}" scaling="uniform" content-height="100mm" content-width="98mm"/>
+				<xsl:if test="/photos/@OnlyComment='false'">
+					<fo:block font-size="6.5pt" font-style="italic">
+						<xsl:value-of select="@href"/>
+					</fo:block>
+				</xsl:if>
+			</fo:block>
 		</fo:table-cell>
 	</xsl:template>
 	<xsl:template match="signature">
