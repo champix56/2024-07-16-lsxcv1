@@ -22,8 +22,8 @@
 		<fo:page-sequence-master master-name="A4PortraitAfter_LR">
 			<fo:repeatable-page-master-alternatives>
 				<fo:conditional-page-master-reference master-reference="A4PortraitAfter" page-position="first"/>
-				<fo:conditional-page-master-reference master-reference="A4PortraitAfter_R" odd-or-even="even"/>
-				<fo:conditional-page-master-reference master-reference="A4PortraitAfter_L" odd-or-even="odd"/>
+				<fo:conditional-page-master-reference master-reference="A4PortraitAfter_R" odd-or-even="odd"/>
+				<fo:conditional-page-master-reference master-reference="A4PortraitAfter_L" odd-or-even="even"/>
 			</fo:repeatable-page-master-alternatives>
 		</fo:page-sequence-master>
 	</xsl:template>

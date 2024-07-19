@@ -21,7 +21,7 @@
 			<fo:list-item-body start-indent="body-start()">
 				<fo:block font-size="14pt">
 					<fo:basic-link internal-destination="p{position()}">
-						<fo:inline font-size="12pt" xsl:use-attribute-sets="greylink">Page <xsl:value-of select="position()"/></fo:inline>
+						<fo:inline font-size="12pt" xsl:use-attribute-sets="greylink">Page <fo:page-number-citation ref-id="p{position()}"/></fo:inline>
 					</fo:basic-link>
 					<fo:list-block>
 						<xsl:apply-templates select=".//image" mode="toc"/>

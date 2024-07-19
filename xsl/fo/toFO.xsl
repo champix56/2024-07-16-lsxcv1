@@ -5,7 +5,13 @@
 	<xsl:include href="sommaire.xsl"/>
 	<xsl:template match="/">
 		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-			
+			<fo:page-sequence master-reference="A4Portrait">
+				<fo:flow flow-name="xsl-region-body">
+					<fo:block>
+						<xsl:call-template name="sommaire"/>
+					</fo:block>
+				</fo:flow>
+			</fo:page-sequence>
 			<fo:layout-master-set>
 				<xsl:call-template name="papersFormats"/>
 				<fo:simple-page-master master-name="10x15" page-width="10cm" page-height="15cm" >
@@ -25,16 +31,9 @@
 					</fo:block>
 				</fo:flow>
 			</fo:page-sequence>
-			<fo:page-sequence master-reference="A4Portrait">
-				<fo:flow flow-name="xsl-region-body">
-					<fo:block>
-						<xsl:call-template name="sommaire"/>
-					</fo:block>
-				</fo:flow>
-			</fo:page-sequence>
 			<fo:page-sequence master-reference="10x15">
 				<fo:flow flow-name="xsl-region-body">
-					<fo:block>
+					<fo:block id="lastPage">
 						Remerciements à tous les participants de la formation
 					</fo:block>
 				</fo:flow>
@@ -71,7 +70,7 @@
 	</xsl:template>
 	<xsl:template name="footer">
 		<fo:block text-align="center">
-			<xsl:apply-templates select="//signature"/> - <fo:page-number/> / <fo:page-number-citation ref-id="p{last()}"/>
+			<xsl:apply-templates select="//signature"/> - <fo:page-number/> / <fo:page-number-citation ref-id="lastPage"/>
 		</fo:block>
 	</xsl:template>
 	<xsl:template match="image">
