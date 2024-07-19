@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
 	<xsl:output method="xml" version="1.0" encoding="utf-8" indent="yes"/>
+	<xsl:include href="papersFormats.xsl"/>
 	<xsl:include href="sommaire.xsl"/>
 	<xsl:template match="/">
 		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-			<!--def. des formats de papiers-->
-			<fo:layout-master-set>
-				<fo:simple-page-master master-name="A4Portrait" page-height="297mm" page-width="210mm">
-					<fo:region-body/>
-				</fo:simple-page-master>
-			</fo:layout-master-set>
+			<xsl:call-template name="papersFormats"/>
 			<!--partie de def des corps des pages-->
+			<fo:page-sequence master-reference="A4PortraitAfter">
+				<fo:static-content flow-name="xsl-region-after">
+					<fo:block>
+						<xsl:call-template name="footer"/>
+					</fo:block>
+				</fo:static-content>
+				<fo:flow flow-name="xsl-region-body">
+					<fo:block>
+						<xsl:apply-templates select="//page"/>
+					</fo:block>
+				</fo:flow>
+			</fo:page-sequence>
 			<fo:page-sequence master-reference="A4Portrait">
 				<fo:flow flow-name="xsl-region-body">
 					<fo:block>
 						<xsl:call-template name="sommaire"/>
-						<xsl:apply-templates select="//page"/>
 					</fo:block>
 				</fo:flow>
 			</fo:page-sequence>
@@ -47,7 +54,6 @@
 					</xsl:if>
 				</fo:table-body>
 			</fo:table>
-			<xsl:call-template name="footer"/>
 		</fo:block>
 	</xsl:template>
 	<xsl:template name="footer">
@@ -80,5 +86,4 @@
 			</fo:inline>
 		</fo:basic-link>
 	</xsl:template>
-	
 </xsl:stylesheet>
