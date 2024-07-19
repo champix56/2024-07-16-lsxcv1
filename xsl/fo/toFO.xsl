@@ -5,14 +5,14 @@
 	<xsl:include href="sommaire.xsl"/>
 	<xsl:template match="/">
 		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
-			
 			<fo:layout-master-set>
 				<xsl:call-template name="papersFormats"/>
-				<fo:simple-page-master master-name="10x15" page-width="10cm" page-height="15cm" >
-					<fo:region-body></fo:region-body>
+				<fo:simple-page-master master-name="10x15" page-width="10cm" page-height="15cm">
+					<fo:region-body/>
 				</fo:simple-page-master>
 			</fo:layout-master-set>
 			<!--partie de def des corps des pages-->
+			<xsl:apply-templates select="//couv"/>
 			<fo:page-sequence master-reference="A4Portrait">
 				<fo:flow flow-name="xsl-region-body">
 					<fo:block>
@@ -98,5 +98,18 @@
 				<xsl:value-of select="//signature"/>
 			</fo:inline>
 		</fo:basic-link>
+	</xsl:template>
+	<xsl:template match="couv">
+		<fo:page-sequence master-reference="A4Portrait">
+			<fo:flow flow-name="xsl-region-body">
+				<fo:block text-align="center" margin-top="8cm" xsl:use-attribute-sets="verrybig">
+					<xsl:value-of select="//titre"/>
+					<fo:block/>
+					<xsl:if test="image">
+					<fo:external-graphic src="{concat(image/@path,image/@href)}" content-height="10cm" content-width="17cm" scaling="uniform"/>
+					</xsl:if>
+				</fo:block>
+			</fo:flow>
+		</fo:page-sequence>
 	</xsl:template>
 </xsl:stylesheet>
