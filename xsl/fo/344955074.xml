@@ -6,7 +6,9 @@
 	</couv>
 	<pages titre="true">
 		<page>
-			<image href="10589498_10152666826402884_269854391_n.jpg" path="G:\partage\photos\">versailles</image>
+			<image href="10589498_10152666826402884_269854391_n.jpg" path="G:\partage\photos\">
+				<fo:block color="blue">Ver<fo:inline text-decoration="underline">saill</fo:inline>es</fo:block>
+			</image>
 			<image href="10599489_10152664721102884_8998763423280924639_n.jpg" path="G:\partage\photos\">versailles 2</image>
 			<image href="10603059_10152666856762884_1968346443_n.jpg" path="G:\partage\photos\">versailles 3</image>
 			<image href="10616075_10152664721277884_204613508926358332_n.jpg" path="G:\partage\photos\">Locqmariaquer</image>
