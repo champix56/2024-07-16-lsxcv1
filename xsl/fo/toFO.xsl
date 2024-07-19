@@ -13,7 +13,7 @@
 				</fo:simple-page-master>
 			</fo:layout-master-set>
 			<!--partie de def des corps des pages-->
-			<fo:page-sequence master-reference="A4PortraitAfter">
+			<fo:page-sequence master-reference="A4PortraitAfter_LR">
 				<fo:static-content flow-name="xsl-region-after">
 					<fo:block>
 						<xsl:call-template name="footer"/>
@@ -77,7 +77,7 @@
 	<xsl:template match="image">
 		<fo:table-cell id="i{generate-id()}">
 			<fo:block text-align="center">
-				<fo:external-graphic src="{concat(@path,@href)}" scaling="uniform" content-height="100mm" content-width="98mm"/>
+				<fo:external-graphic src="{concat(@path,@href)}" scaling="uniform" content-height="100mm" content-width="90mm"/>
 				<fo:block>
 					<xsl:apply-templates select="*|text()"/>
 				</fo:block>
