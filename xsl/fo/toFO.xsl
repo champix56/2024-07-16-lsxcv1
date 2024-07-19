@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format">
 	<xsl:output method="xml" version="1.0" encoding="utf-8" indent="yes"/>
+	<xsl:include href="styles.xsl"/>
 	<xsl:template match="/">
 		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 			<!--def. des formats de papiers-->
@@ -99,7 +100,7 @@
 			<fo:list-item-body start-indent="body-start()">
 				<fo:block font-size="14pt">
 					<fo:basic-link internal-destination="p{position()}">
-						<fo:inline font-size="12pt" color="grey" text-decoration="underline">Page <xsl:value-of select="position()"/></fo:inline>
+						<fo:inline font-size="12pt" xsl:use-attribute-sets="greylink">Page <xsl:value-of select="position()"/></fo:inline>
 					</fo:basic-link>
 					<fo:list-block>
 						<xsl:apply-templates select=".//image" mode="toc"/>
@@ -116,7 +117,7 @@
 			<fo:list-item-body start-indent="body-start()">
 				<fo:block>
 					<fo:basic-link internal-destination="i{generate-id()}">
-						<fo:inline color="blue" text-decoration="underline" font-size="7pt">
+						<fo:inline xsl:use-attribute-sets="small link">
 							<xsl:value-of select="@href"/>
 						</fo:inline>
 					</fo:basic-link>
